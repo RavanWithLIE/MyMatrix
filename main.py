@@ -4,9 +4,9 @@ import requests
 st.title("API Data Sample")
 
 with st.form("form"):
-    command=st.text_input("Enter your command")
-    worktype=st.text_input("Enter your work type")
-    workrate=st.text_input("Enter your work rate")
+    ACName=st.text_input("Enter your work type")
+    TType=st.selectbox("Select your Transaction Type",["Credit","Debit"])
+    AMT=st.number_input("Enter your amount per month",step=0.1)
 
     submitted=st.form_submit_button("Submit")
 
@@ -14,9 +14,10 @@ if submitted:
     url="https://4hggabmds3.execute-api.ap-south-1.amazonaws.com/PreProduction/Tracker"
 
     payload={
-        "command":command,
-        "worktype":worktype,
-        "workrate":workrate,
+        "command":"Add",
+        "ACName":ACName,
+        "Trans":TType,
+        "amount":AMT,
     }
 
     headers = {
