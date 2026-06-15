@@ -4,7 +4,7 @@ import requests
 st.title("API Data Sample")
 
 with st.form("form"):
-    ACName=st.text_input("Enter your work type")
+    ACName=st.text_input("Enter Acount")
     TType=st.selectbox("Select your Transaction Type",["Credit","Debit"])
     AMT=st.number_input("Enter your amount per month",step=0.1)
 
