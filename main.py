@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("API Data Sample")
+st.title("My Updater")
 
 with st.form("form"):
     ACName=st.text_input("Enter Acount")
@@ -16,7 +16,7 @@ if submitted:
     payload={
         "command":"Add",
         "ACName":ACName,
-        "Trans":TType,
+        "trans": TType=="Credit",
         "amount":AMT,
     }
 
